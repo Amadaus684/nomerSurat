@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Roles\Tables;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 
@@ -31,7 +32,15 @@ class RolesTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->visible(fn ($record): bool =>
+                        auth()->user()?->can('roles.update') ?? false
+                    ),
+
+                DeleteAction::make()
+                    ->visible(fn ($record): bool =>
+                        auth()->user()?->can('roles.delete') ?? false
+                    ),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

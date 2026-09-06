@@ -52,7 +52,10 @@ class UsersTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->visible(fn ($record): bool =>
+                        auth()->user()?->can('users.update') ?? false
+                    ),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

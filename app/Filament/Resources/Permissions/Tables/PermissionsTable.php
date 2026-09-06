@@ -45,8 +45,14 @@ class PermissionsTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->visible(fn ($record): bool =>
+                        auth()->user()?->can('permissions.update') ?? false
+                    ),
                 DeleteAction::make()
+                    ->visible(fn ($record): bool =>
+                        auth()->user()?->can('permissions.delete') ?? false
+                    )
                     ->before(function ($action, $record) {
                         if ($record->roles()->exists()) {
                             $roles = $record->roles
