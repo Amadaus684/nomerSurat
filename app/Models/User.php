@@ -11,10 +11,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\ActivityLog;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasAvatar;
 
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'remember_token'])]
-class User extends Authenticatable
+class User extends Authenticatable implements HasAvatar
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
@@ -24,12 +26,26 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+    }
+
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->profile?->photo
+            ? asset('storage/' . $this->profile->photo)
+            : 'https://api.dicebear.com/7.x/bottts/svg?seed=' .
+            urlencode($this->profile?->full_name ?? $this->name);
+
     }
 
     public function activityLogs(): HasMany
