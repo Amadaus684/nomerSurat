@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Setting;
+use Illuminate\Support\Facades\Crypt;
 
 class SettingService
 {
@@ -10,7 +11,19 @@ class SettingService
     {
         $setting = Setting::where('key', $key)->first();
 
-        return $setting?->typed_value ?? $default;
+        if (!$setting) {
+            return $default;
+        }
+
+        if ($setting->type === 'encrypted') {
+            try {
+                return Crypt::decryptString($setting->value);
+            } catch (\Throwable) {
+                return $default;
+            }
+        }
+
+        return $setting->typed_value;
     }
 
     public function set(
@@ -24,6 +37,7 @@ class SettingService
             'integer' => (string) $value,
             'float' => (string) $value,
             'json', 'array' => json_encode($value),
+            'encrypted' => Crypt::encryptString((string) $value),
             default => (string) $value,
         };
 
