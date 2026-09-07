@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Filament\Resources\Permissions\Pages;
+namespace App\Filament\Resources\Klasifikasis\Pages;
 
-use App\Filament\Resources\Permissions\PermissionResource;
+use App\Filament\Resources\Klasifikasis\KlasifikasiResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditPermission extends EditRecord
+class EditKlasifikasi extends EditRecord
 {
-    protected static string $resource = PermissionResource::class;
+    protected static string $resource = KlasifikasiResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            // DeleteAction::make(),
         ];
     }
 
