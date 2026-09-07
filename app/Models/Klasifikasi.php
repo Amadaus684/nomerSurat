@@ -13,4 +13,9 @@ class Klasifikasi extends Model
         'number',
         'description',
     ];
+
+    public function jenisSurats()
+    {
+        return $this->hasMany(JenisSurat::class);
+    }
 }

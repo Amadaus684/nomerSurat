@@ -17,6 +17,7 @@ class KlasifikasiForm
                     ->unique(ignoreRecord: true)
                     ->placeholder('900')
                     ->required(),
+                    
                 TextInput::make('description')
                     ->placeholder('Usaha dan Ekonomi')
                     ->maxLength(200)

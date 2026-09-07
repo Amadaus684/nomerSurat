@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('jenis_surats', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('klasifikasi_id')
+                ->constrained('klasifikasis')
+                ->cascadeOnUpdate()
+                ->restrictOnDelete();
+
+            $table->string('name');
+            $table->text('description')->nullable();
+
             $table->timestamps();
         });
     }
