@@ -17,6 +17,9 @@ class SiteDetails extends Page
 
     public ?array $data = [];
 
+    protected static string|\BackedEnum|null $navigationIcon =
+        \Filament\Support\Icons\Heroicon::OutlinedComputerDesktop;
+
     public function form(Schema $schema): Schema
     {
         return $schema
