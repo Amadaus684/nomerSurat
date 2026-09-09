@@ -13,7 +13,10 @@ class ListKlasifikasis extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                    ->visible(fn ($record): bool =>
+                        auth()->user()?->can('klasifikasi.create') ?? false
+                    ),
         ];
     }
 }

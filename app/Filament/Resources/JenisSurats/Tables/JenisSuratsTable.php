@@ -34,7 +34,10 @@ class JenisSuratsTable
             ])
             ->defaultSort('klasifikasi.number', 'asc')
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->visible(fn ($record): bool =>
+                        auth()->user()?->can('jenis_surat.update') ?? false
+                    ),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

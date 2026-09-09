@@ -37,10 +37,10 @@ class RolesTable
                         auth()->user()?->can('roles.update') ?? false
                     ),
 
-                DeleteAction::make()
-                    ->visible(fn ($record): bool =>
-                        auth()->user()?->can('roles.delete') ?? false
-                    ),
+                // DeleteAction::make()
+                //     ->visible(fn ($record): bool =>
+                //         auth()->user()?->can('roles.delete') ?? false
+                //     ),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

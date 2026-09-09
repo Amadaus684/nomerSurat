@@ -33,7 +33,10 @@ class KlasifikasisTable
             ])
             ->defaultSort('number', 'asc')
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->visible(fn ($record): bool =>
+                        auth()->user()?->can('klasifikasi.update') ?? false
+                    ),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
