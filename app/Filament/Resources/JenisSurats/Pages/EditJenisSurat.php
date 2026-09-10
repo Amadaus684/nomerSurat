@@ -21,4 +21,11 @@ class EditJenisSurat extends EditRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        $data['name'] = ucwords(strtolower($data['name']));
+
+        return $data;
+    }
 }

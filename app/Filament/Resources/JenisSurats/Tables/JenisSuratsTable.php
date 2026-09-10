@@ -14,7 +14,7 @@ class JenisSuratsTable
     {
         return $table
             ->columns([
-                TextColumn::make('kategori.number')
+                TextColumn::make('category.name')
                     ->label('Kategori')
                     ->searchable()
                     ->sortable(),
