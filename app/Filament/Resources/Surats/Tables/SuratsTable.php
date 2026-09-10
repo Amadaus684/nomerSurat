@@ -49,7 +49,7 @@ class SuratsTable
                 TextColumn::make('tujuan')
                     ->label('Tujuan')
                     ->searchable(),
-                TextColumn::make('pembuat.name')
+                TextColumn::make('pembuat.full_name')
                     ->label('Pembuat')
                     ->searchable()
                     ->sortable(),
