@@ -31,6 +31,8 @@ class EditUser extends EditRecord
 
         unset($data['roles']);
 
+        $data['name'] = strtolower($data['name']);
+
         return $data;
     }
 
