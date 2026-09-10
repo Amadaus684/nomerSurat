@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Klasifikasis\Tables;
 
 use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
+// use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -19,6 +19,10 @@ class KlasifikasisTable
                     ->searchable(),
                 TextColumn::make('description')
                     ->searchable(),
+                TextColumn::make('jenis_surats_count')
+                    ->label('Jumlah Jenis Surat')
+                    ->counts('jenisSurats')
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

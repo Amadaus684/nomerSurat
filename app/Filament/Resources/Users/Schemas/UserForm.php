@@ -14,7 +14,9 @@ class UserForm
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->label('Name')
+                    ->label('User Name')
+                    ->placeholder('babyshark')
+                    ->unique(ignoreRecord: true)
                     ->required()
                     ->maxLength(255),
 
