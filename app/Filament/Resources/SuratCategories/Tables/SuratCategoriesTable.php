@@ -17,6 +17,10 @@ class SuratCategoriesTable
                 TextColumn::make('name')
                     ->label('Kategori Surat')
                     ->searchable(),
+                TextColumn::make('jenis_surats_count')
+                    ->label('Jumlah Jenis Surat')
+                    ->counts('jenisSurats')
+                    ->sortable(),   
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
