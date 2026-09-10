@@ -16,7 +16,7 @@ use Filament\Models\Contracts\HasAvatar;
 use Spatie\Permission\Traits\HasRoles;
 use App\Models\Concerns\LogsActivity;
 
-#[Fillable(['name', 'email', 'password'])]
+#[Fillable(['name', 'email', 'password', 'full_name'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable implements HasAvatar
 {

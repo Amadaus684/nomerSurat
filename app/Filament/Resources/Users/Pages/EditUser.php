@@ -32,6 +32,7 @@ class EditUser extends EditRecord
         unset($data['roles']);
 
         $data['name'] = strtolower($data['name']);
+        $data['full_name'] = ucwords(strtolower($data['full_name'] ?? ''));
 
         return $data;
     }

@@ -19,6 +19,7 @@ class CreateUser extends CreateRecord
         unset($data['roles']);
 
         $data['name'] = strtolower($data['name']);
+        $data['full_name'] = ucwords(strtolower($data['full_name'] ?? ''));
 
         return $data;
     }

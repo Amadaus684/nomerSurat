@@ -18,6 +18,11 @@ class UserForm
                     ->required()
                     ->maxLength(255),
 
+                TextInput::make('full_name')
+                    ->label('Nama Lengkap')
+                    ->required()
+                    ->maxLength(100),
+
                 TextInput::make('email')
                     ->label('Email address')
                     ->email()
