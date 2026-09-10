@@ -17,6 +17,7 @@ class CreateJenisSurat extends CreateRecord
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $data['name'] = ucwords(strtolower($data['name']));
+        $data['description'] = ucwords(strtolower($data['description']));
 
         return $data;
     }
