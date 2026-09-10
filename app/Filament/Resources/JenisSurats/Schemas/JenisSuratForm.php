@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\JenisSurats\Schemas;
 
 use App\Models\Klasifikasi;
+use App\Models\Kategori;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
@@ -14,6 +15,22 @@ class JenisSuratForm
     {
         return $schema
             ->components([
+                Select::make('category_id')
+                    ->label('Kategori')
+                    ->options(
+                        Kategori::query()
+                            ->orderBy('number')
+                            ->get()
+                            ->mapWithKeys(fn (Kategori $kategori) => [
+                                $kategori->id =>
+                                    "{$kategori->id} - {$klasifikasi->name}",
+                            ])
+                            ->toArray()
+                    )
+                    ->searchable()
+                    ->preload()
+                    ->required(),
+
                 Select::make('klasifikasi_id')
                     ->label('Klasifikasi')
                     ->options(

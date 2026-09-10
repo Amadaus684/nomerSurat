@@ -38,6 +38,12 @@ class RolePermissionSeeder extends Seeder
             'klasifikasi.update',
             'klasifikasi.delete',
 
+            // Kategori
+            'kategori.view',
+            'kategori.create',
+            'kategori.update',
+            'kategori.delete',
+
             // Users
             'users.view',
             'users.create',

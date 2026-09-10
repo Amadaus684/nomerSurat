@@ -10,6 +10,7 @@ class JenisSurat extends Model
     use LogsActivity;
 
     protected $fillable = [
+        'category_id',
         'klasifikasi_id',
         'name',
         'description',
@@ -18,5 +19,10 @@ class JenisSurat extends Model
     public function klasifikasi()
     {
         return $this->belongsTo(Klasifikasi::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(SuratCategory::class, 'category_id');
     }
 }

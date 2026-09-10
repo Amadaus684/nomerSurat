@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\JenisSurats\Tables;
+namespace App\Filament\Resources\SuratCategories\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -8,21 +8,14 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class JenisSuratsTable
+class SuratCategoriesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('kategori.number')
-                    ->label('Kategori')
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('klasifikasi.number')
-                    ->label('Klasifikasi')
-                    ->searchable()
-                    ->sortable(),
                 TextColumn::make('name')
+                    ->label('Kategori Surat')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -36,12 +29,12 @@ class JenisSuratsTable
             ->filters([
                 //
             ])
-            ->defaultSort('klasifikasi.number', 'asc')
             ->recordActions([
-                EditAction::make()
-                    ->visible(fn ($record): bool =>
-                        auth()->user()?->can('jenis_surat.update') ?? false
-                    ),
+                // EditAction::make()
+                //     ->visible(fn ($record): bool =>
+                //         auth()->user()?->can('kategori.update') ?? false
+                //     ),
+                EditAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
