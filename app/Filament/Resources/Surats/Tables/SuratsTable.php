@@ -25,24 +25,29 @@ class SuratsTable
                 TextColumn::make('tanggal_surat')
                     ->label('Tanggal Surat')
                     ->date(
-                        app(\App\Services\SettingService::class)
+                        app(SettingService::class)
                             ->get('localization.date_format', 'd/m/Y')
                     )
                     ->sortable(),
                 TextColumn::make('jenisSurat.name')
+                    ->label('Jenis Surat')
                     ->searchable(),
                 TextColumn::make('klasifikasi.description')
                     ->label('Klasifikasi')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('nama_penduduk')
+                    ->label('Nama Penduduk')
                     ->searchable(),
                 TextColumn::make('nik')
+                    ->label('NIK')
                     ->searchable(),
                 TextColumn::make('tanggal_kirim')
+                    ->label('Tanggal Kirim')
                     ->date()
                     ->sortable(),
                 TextColumn::make('tujuan')
+                    ->label('Tujuan')
                     ->searchable(),
                 TextColumn::make('pembuat.name')
                     ->label('Pembuat')
@@ -62,11 +67,14 @@ class SuratsTable
             ])
             ->recordUrl(null)
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->visible(fn ($record): bool =>
+                        auth()->user()?->can('surat.update') ?? false
+                    ),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    // DeleteBulkAction::make(),
                 ]),
             ]);
     }
