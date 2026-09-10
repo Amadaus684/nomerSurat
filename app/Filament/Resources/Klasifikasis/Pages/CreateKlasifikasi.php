@@ -13,4 +13,11 @@ class CreateKlasifikasi extends CreateRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        $data['description'] = ucwords(strtolower($data['description']));
+
+        return $data;
+    }
 }

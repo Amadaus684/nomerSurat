@@ -21,4 +21,11 @@ class EditKlasifikasi extends EditRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        $data['description'] = ucwords(strtolower($data['description']));
+
+        return $data;
+    }
 }
