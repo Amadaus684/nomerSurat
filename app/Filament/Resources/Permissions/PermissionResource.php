@@ -22,6 +22,10 @@ class PermissionResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = 'Access Control';
 
+    protected static ?string $navigationLabel = 'Permissions';
+
+    protected static ?int $navigationSort = 10;
+
     public static function form(Schema $schema): Schema
     {
         return PermissionForm::configure($schema);

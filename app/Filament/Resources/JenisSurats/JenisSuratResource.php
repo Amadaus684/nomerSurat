@@ -28,6 +28,8 @@ class JenisSuratResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Jenis Surat';
 
+    protected static ?int $navigationSort = 30;
+
     public static function form(Schema $schema): Schema
     {
         return JenisSuratForm::configure($schema);

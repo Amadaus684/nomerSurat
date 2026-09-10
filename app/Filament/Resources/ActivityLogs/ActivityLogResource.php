@@ -20,7 +20,11 @@ class ActivityLogResource extends Resource
 {
     protected static ?string $model = ActivityLog::class;
 
+    protected static ?string $navigationLabel = 'Activity Logs';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentList;
+
+    protected static ?int $navigationSort = 20;
 
     public static function form(Schema $schema): Schema
     {
