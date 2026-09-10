@@ -20,6 +20,11 @@ class SequenceBehavior extends Page
 
     protected static ?string $navigationLabel = 'Sequence Behavior';
 
+    public static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()?->can('settings.view') ?? false;
+    }
+
     protected static string|\BackedEnum|null $navigationIcon =
         \Filament\Support\Icons\Heroicon::OutlinedAdjustmentsHorizontal;
 

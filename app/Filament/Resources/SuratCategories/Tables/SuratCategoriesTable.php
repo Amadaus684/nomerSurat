@@ -34,11 +34,10 @@ class SuratCategoriesTable
                 //
             ])
             ->recordActions([
-                // EditAction::make()
-                //     ->visible(fn ($record): bool =>
-                //         auth()->user()?->can('kategori.update') ?? false
-                //     ),
-                EditAction::make(),
+                EditAction::make()
+                    ->visible(fn ($record): bool =>
+                        auth()->user()?->can('kategori.update') ?? false
+                    ),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

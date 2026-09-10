@@ -22,7 +22,13 @@ class VillageIdentity extends Page
 
     protected static ?string $navigationLabel = 'Village Identity';
 
-    protected static string|\BackedEnum|null $navigationIcon = \Filament\Support\Icons\Heroicon::OutlinedBuildingOffice2;
+    public static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()?->can('settings.view') ?? false;
+    }
+
+    protected static string|\BackedEnum|null $navigationIcon = 
+    \Filament\Support\Icons\Heroicon::OutlinedBuildingOffice2;
 
     public ?array $data = [];
 

@@ -20,6 +20,11 @@ class Localization extends Page
 
     protected static ?string $navigationLabel = 'Localization';
 
+    public static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()?->can('settings.view') ?? false;
+    }
+
     protected static string|\BackedEnum|null $navigationIcon =
         \Filament\Support\Icons\Heroicon::OutlinedLanguage;
 

@@ -13,4 +13,10 @@ class SettingsCluster extends Cluster
     protected static ?string $navigationLabel = 'Settings';
 
     protected static ?int $navigationSort = 90;
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()?->can('settings.view') ?? false;
+    }
+
 }

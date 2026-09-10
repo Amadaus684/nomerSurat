@@ -16,6 +16,11 @@ use Filament\Forms\Components\Placeholder;
 
 class LetterNumberFormat extends Page
 {
+    public static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()?->can('settings.view') ?? false;
+    }
+    
     protected string $view = 'filament.clusters.settings.pages.letter-number-format';
 
     protected static ?string $cluster = SettingsCluster::class;

@@ -48,7 +48,22 @@ class PermissionsTable
                 EditAction::make()
                     ->visible(fn ($record): bool =>
                         auth()->user()?->can('permissions.update') ?? false
-                    ),
+                    )
+                    ->before(function ($action, $record) {
+                        if ($record->roles()->exists()) {
+                            $roles = $record->roles
+                                ->pluck('name')
+                                ->implode(', ');
+
+                            \Filament\Notifications\Notification::make()
+                                ->title('Permission cannot be updated')
+                                ->body("This permission is assigned to: {$roles}")
+                                ->danger()
+                                ->send();
+
+                            $action->cancel();
+                        }
+                    }),
                 DeleteAction::make()
                     ->visible(fn ($record): bool =>
                         auth()->user()?->can('permissions.delete') ?? false

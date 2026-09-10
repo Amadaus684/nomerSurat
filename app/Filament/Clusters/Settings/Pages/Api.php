@@ -203,4 +203,9 @@ class Api extends Page
                 ->action('testConnection'),
         ];
     }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()?->can('settings.view') ?? false;
+    }
 }

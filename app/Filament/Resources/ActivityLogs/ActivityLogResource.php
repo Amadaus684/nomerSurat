@@ -57,4 +57,9 @@ class ActivityLogResource extends Resource
             // 'edit' => EditActivityLog::route('/{record}/edit'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->can('activity_logs.view') ?? false;
+    }
 }

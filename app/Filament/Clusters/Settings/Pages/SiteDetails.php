@@ -17,6 +17,11 @@ class SiteDetails extends Page
 
     public ?array $data = [];
 
+    public static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()?->can('settings.view') ?? false;
+    }
+
     protected static string|\BackedEnum|null $navigationIcon =
         \Filament\Support\Icons\Heroicon::OutlinedComputerDesktop;
 

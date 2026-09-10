@@ -113,6 +113,11 @@ class RolePermissionSeeder extends Seeder
             'klasifikasi.update',
             'klasifikasi.delete',
 
+            'kategori.view',
+            'kategori.create',
+            'kategori.update',
+            'kategori.delete',
+
             'users.view',
             'users.create',
             'users.update',
@@ -143,6 +148,8 @@ class RolePermissionSeeder extends Seeder
             'jenis_surat.view',
 
             'klasifikasi.view',
+
+            'kategori.view',
         ]);
 
         // Viewer permissions
@@ -152,6 +159,8 @@ class RolePermissionSeeder extends Seeder
             'jenis_surat.view',
 
             'klasifikasi.view',
+
+            'kategori.view',
         ]);
 
         // Clear cache again after modifications
