@@ -34,8 +34,14 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->spa()
             ->login()
+            // ->defaultThemeMode(ThemeMode::Light);
+            // ->darkMode(isForced: true);
+            // ->font('Roboto');
+            // ->brandName('Filament Demo');
+            // ->favicon(asset('images/favicon.png'));
             ->colors([
-                'primary' => Color::Amber,
+                // 'primary' => Color::Indigo,
+                'primary' => '#2ef905',
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
