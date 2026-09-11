@@ -10,6 +10,11 @@ class SuratCategoryOverview extends StatsOverviewWidget
 {
     protected static ?int $sort = 3;
 
+    protected function getColumns(): int
+    {
+        return 2;
+    }
+
     protected function getStats(): array
     {
         return SuratCategory::query()
