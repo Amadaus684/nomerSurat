@@ -53,6 +53,7 @@ class UserSeeder extends Seeder
                 ],
                 [
                     'name' => $userData['name'],
+                    'full_name' => $userData['full_name'],
                     'password' => Hash::make($userData['password']),
                 ],
             );
