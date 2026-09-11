@@ -128,9 +128,8 @@ class SuratForm
                             return false;
                         }
 
-                        return JenisSurat::with('category')
-                            ->find($jenisSuratId)
-                            ?->category?->name === 'Surat Keterangan';
+                        return JenisSurat::find($jenisSuratId)
+                            ?->name === 'Surat Keterangan';
                     }),
 
                 Section::make('Detail Surat')
