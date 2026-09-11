@@ -18,7 +18,9 @@ class KlasifikasisTable
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('description')
-                    ->searchable(),
+                    ->searchable()
+                    ->badge()
+                    ->color('warning'),
                 TextColumn::make('jenis_surats_count')
                     ->label('Jumlah Jenis Surat')
                     ->counts('jenisSurats')
