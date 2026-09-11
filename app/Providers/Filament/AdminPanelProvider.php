@@ -23,6 +23,7 @@ use App\Filament\Widgets\RecentSurats;
 use App\Filament\Widgets\SuratCategoryOverview;
 use App\Filament\Widgets\JenisSuratChart;
 use App\Filament\Widgets\MonthlySuratChart;
+use Filament\Enums\ThemeMode;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -34,11 +35,10 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->spa()
             ->login()
-            // ->defaultThemeMode(ThemeMode::Light);
-            // ->darkMode(isForced: true);
-            // ->font('Roboto');
-            // ->brandName('Filament Demo');
-            // ->favicon(asset('images/favicon.png'));
+            ->defaultThemeMode(ThemeMode::Dark)
+            ->font('Sansation')
+            ->brandName('Noura')
+            ->favicon(asset('images/favicon.png'))
             ->colors([
                 // 'primary' => Color::Indigo,
                 'primary' => '#2ef905',
