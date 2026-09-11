@@ -30,7 +30,7 @@ class Api extends Page
         $settings = app(SettingService::class);
 
         $this->form->fill([
-            'enabled' => $settings->get('api.enabled', false),
+            'enabled' => $settings->get('api.enabled', true),
             'base_url' => $settings->get('api.base_url', ''),
             'token' => '',
             'timeout' => $settings->get('api.timeout', 30),
@@ -65,6 +65,7 @@ class Api extends Page
                             ->numeric()
                             ->minValue(1)
                             ->maxValue(300)
+                            ->helperText('time limit for waiting responds from api, max value is 300.')
                             ->suffix('seconds')
                             ->default(30)
                             ->required(),
