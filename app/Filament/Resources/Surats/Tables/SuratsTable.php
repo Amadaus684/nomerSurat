@@ -14,9 +14,12 @@ class SuratsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->heading('Daftar Surat')
+            ->description('Klik nomor surat untuk menyalin nomor surat.')
             ->columns([
                 TextColumn::make('nomor_surat')
                     ->label('Nomor Surat')
+                    ->tooltip('Click to copy letter number')
                     ->copyable()
                     ->copyMessage('Nomor surat berhasil disalin')
                     ->copyMessageDuration(1500)
