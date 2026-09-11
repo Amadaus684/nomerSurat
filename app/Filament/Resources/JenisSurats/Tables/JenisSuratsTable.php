@@ -14,16 +14,20 @@ class JenisSuratsTable
     {
         return $table
             ->columns([
+                TextColumn::make('name')
+                    ->label('Jenis Surat')
+                    ->color('warning')
+                    ->searchable(),
                 TextColumn::make('category.name')
                     ->label('Kategori')
                     ->searchable()
+                    ->color('info')
+                    ->badge()
                     ->sortable(),
                 TextColumn::make('klasifikasi.number')
                     ->label('Klasifikasi')
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('name')
-                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

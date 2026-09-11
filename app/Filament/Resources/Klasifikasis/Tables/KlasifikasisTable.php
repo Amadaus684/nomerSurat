@@ -24,6 +24,7 @@ class KlasifikasisTable
                 TextColumn::make('jenis_surats_count')
                     ->label('Jumlah Jenis Surat')
                     ->counts('jenisSurats')
+                    ->color('danger')
                     ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
