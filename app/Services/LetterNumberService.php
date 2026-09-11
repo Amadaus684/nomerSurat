@@ -6,6 +6,7 @@ use App\Models\Klasifikasi;
 use App\Models\Surat;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use App\Services\SettingService;
 
 class LetterNumberService
 {
@@ -96,12 +97,12 @@ class LetterNumberService
 
         $lastSequence = $query
             ->get()
-            ->map(function (Surat $surat) {
-                preg_match('/^(\d+)/', $surat->nomor_surat, $matches);
-
-                return isset($matches[1])
-                    ? (int) $matches[1]
-                    : 0;
+            ->map(function (Surat $surat) use ($date, $klasifikasiId) {
+                return $this->extractSequence(
+                    $surat->nomor_surat,
+                    $date,
+                    $klasifikasiId,
+                );
             })
             ->max() ?? 0;
 
@@ -180,4 +181,80 @@ class LetterNumberService
             12 => 'XII',
         ][$month];
     }
+
+    protected function extractSequence(
+        string $number,
+        Carbon $date,
+        int $klasifikasiId,
+    ): int {
+        $settings = app(SettingService::class);
+
+        $components = $settings->get(
+            'letter_number.format_components',
+            []
+        );
+
+        $pattern = '';
+        $sequenceGroup = null;
+
+        foreach ($components as $component) {
+            $type = $component['type'] ?? null;
+            $separator = $component['separator'] ?? '';
+
+            $value = match ($type) {
+                'number' => '([0-9]+)',
+
+                'classification' => preg_quote(
+                    Klasifikasi::find($klasifikasiId)?->number ?? '',
+                    '/'
+                ),
+
+                'village_code' => preg_quote(
+                    $settings->get('village.code', '') ?? '',
+                    '/'
+                ),
+
+                'month' => preg_quote(
+                    $date->format('m'),
+                    '/'
+                ),
+
+                'month_roman' => preg_quote(
+                    $this->romanMonth($date->month),
+                    '/'
+                ),
+
+                'year' => preg_quote(
+                    $date->format('Y'),
+                    '/'
+                ),
+
+                'custom' => preg_quote(
+                    $component['custom_text'] ?? '',
+                    '/'
+                ),
+
+                default => '',
+            };
+
+            if ($type === 'number') {
+                $sequenceGroup = 1;
+            }
+
+            $pattern .= $value . preg_quote($separator, '/');
+        }
+
+        if ($sequenceGroup === null) {
+            return 0;
+        }
+
+        if (preg_match('/^' . $pattern . '$/', $number, $matches)) {
+            return isset($matches[$sequenceGroup])
+                ? (int) $matches[$sequenceGroup]
+                : 0;
+        }
+
+        return 0;
+    }
+
 }

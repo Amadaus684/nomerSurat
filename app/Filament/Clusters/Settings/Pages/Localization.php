@@ -18,6 +18,8 @@ class Localization extends Page
 
     protected static ?string $title = 'Localization';
 
+    protected static ?int $navigationSort = 40;
+
     protected static ?string $navigationLabel = 'Localization';
 
     public static function shouldRegisterNavigation(): bool

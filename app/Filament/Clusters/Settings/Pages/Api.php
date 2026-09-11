@@ -20,6 +20,8 @@ class Api extends Page
 
     protected static ?string $title = 'API';
 
+    protected static ?int $navigationSort = 10;
+
     protected static string|\BackedEnum|null $navigationIcon =
         \Filament\Support\Icons\Heroicon::OutlinedGlobeAlt;
 

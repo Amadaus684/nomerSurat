@@ -22,6 +22,8 @@ class VillageIdentity extends Page
 
     protected static ?string $navigationLabel = 'Village Identity';
 
+    protected static ?int $navigationSort = 20;
+
     public static function shouldRegisterNavigation(): bool
     {
         return auth()->user()?->can('settings.view') ?? false;

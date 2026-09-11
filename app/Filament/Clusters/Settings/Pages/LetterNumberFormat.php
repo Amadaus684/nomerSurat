@@ -20,6 +20,8 @@ class LetterNumberFormat extends Page
     {
         return auth()->user()?->can('settings.view') ?? false;
     }
+
+    protected static ?int $navigationSort = 50;
     
     protected string $view = 'filament.clusters.settings.pages.letter-number-format';
 

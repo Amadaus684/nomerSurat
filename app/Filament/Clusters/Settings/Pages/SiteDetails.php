@@ -17,6 +17,8 @@ class SiteDetails extends Page
 
     public ?array $data = [];
 
+    protected static ?int $navigationSort = 30;
+
     public static function shouldRegisterNavigation(): bool
     {
         return auth()->user()?->can('settings.view') ?? false;

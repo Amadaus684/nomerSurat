@@ -16,6 +16,8 @@ class SequenceBehavior extends Page
 
     protected static ?string $cluster = SettingsCluster::class;
 
+    protected static ?int $navigationSort = 60;
+
     protected static ?string $title = 'Sequence Behavior';
 
     protected static ?string $navigationLabel = 'Sequence Behavior';
