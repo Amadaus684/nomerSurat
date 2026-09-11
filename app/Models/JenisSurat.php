@@ -25,4 +25,9 @@ class JenisSurat extends Model
     {
         return $this->belongsTo(SuratCategory::class, 'category_id');
     }
+
+    public function surats()
+    {
+        return $this->hasMany(Surat::class);
+    }
 }

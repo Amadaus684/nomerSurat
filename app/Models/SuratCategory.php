@@ -17,4 +17,16 @@ class SuratCategory extends Model
     {
         return $this->hasMany(JenisSurat::class, 'category_id');
     }
+
+    public function surats()
+    {
+        return $this->hasManyThrough(
+            Surat::class,
+            JenisSurat::class,
+            'category_id',
+            'jenis_surat_id',
+            'id',
+            'id'
+        );
+    }
 }

@@ -10,6 +10,18 @@ class Surat extends Model
 {
     use LogsActivity;
 
+    public function surats()
+    {
+        return $this->hasManyThrough(
+            Surat::class,
+            JenisSurat::class,
+            'category_id',
+            'jenis_surat_id',
+            'id',
+            'id'
+        );
+    }
+
     protected $fillable = [
         'nomor_surat',
         'tanggal_surat',
