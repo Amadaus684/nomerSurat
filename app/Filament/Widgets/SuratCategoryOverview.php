@@ -21,12 +21,19 @@ class SuratCategoryOverview extends StatsOverviewWidget
             ->withCount('surats')
             ->get()
             ->map(function (SuratCategory $category) {
+
+                 $color = match ($category->name) {
+                    'Surat Masuk' => 'info',
+                    'Surat Keluar' => 'success',
+                    default => 'gray',
+                };
                 return Stat::make(
                     $category->name,
                     $category->surats_count
                 )
                     ->description('Surat')
-                    ->icon('heroicon-o-squares-2x2');
+                    ->icon('heroicon-o-squares-2x2')
+                    ->color($color);
             })
             ->all();
     }

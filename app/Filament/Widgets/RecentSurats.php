@@ -30,7 +30,8 @@ class RecentSurats extends TableWidget
                 TextColumn::make('nomor_surat')
                     ->label('Nomor Surat')
                     ->copyable()
-                    ->searchable(),
+                    ->searchable()
+                    ->color('info'),
 
                 TextColumn::make('tanggal_surat')
                     ->label('Tanggal Surat')
@@ -41,13 +42,15 @@ class RecentSurats extends TableWidget
                     ->sortable(),
 
                 TextColumn::make('jenisSurat.name')
-                    ->label('Jenis Surat'),
+                    ->label('Jenis Surat')
+                    ->color('warning'),
 
                 TextColumn::make('klasifikasi.number')
                     ->label('Klasifikasi'),
 
                 TextColumn::make('pembuat.name')
-                    ->label('Pembuat'),
+                    ->label('Pembuat')
+                    ->badge(),
             ])
             ->defaultPaginationPageOption(5)
             ->paginated([5]);

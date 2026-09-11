@@ -20,7 +20,8 @@ class SuratStatsOverview extends StatsOverviewWidget
                 Surat::query()->count()
             )
                 ->description('Semua surat')
-                ->icon('heroicon-o-envelope'),
+                ->icon('heroicon-o-envelope')
+                ->color('info'),
 
             Stat::make(
                 'Surat Bulan Ini',
@@ -30,7 +31,8 @@ class SuratStatsOverview extends StatsOverviewWidget
                     ->count()
             )
                 ->description($month->translatedFormat('F Y'))
-                ->icon('heroicon-o-calendar-days'),
+                ->icon('heroicon-o-calendar-days')
+                ->color('danger'),
 
             Stat::make(
                 'Surat Hari Ini',
@@ -39,14 +41,16 @@ class SuratStatsOverview extends StatsOverviewWidget
                     ->count()
             )
                 ->description($today->translatedFormat('d F Y'))
-                ->icon('heroicon-o-calendar'),
+                ->icon('heroicon-o-calendar')
+                ->color('warning'),
 
             Stat::make(
                 'Jenis Surat',
                 JenisSurat::query()->count()
             )
                 ->description('Jenis aktif')
-                ->icon('heroicon-o-document-text'),
+                ->icon('heroicon-o-document-text')
+                ->color('success'),
         ];
     }
 }
