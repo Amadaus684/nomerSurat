@@ -108,32 +108,26 @@ class RolePermissionSeeder extends Seeder
             'jenis_surat.view',
             'jenis_surat.create',
             'jenis_surat.update',
-            'jenis_surat.delete',
 
             'klasifikasi.view',
             'klasifikasi.create',
             'klasifikasi.update',
-            'klasifikasi.delete',
 
             'kategori.view',
             'kategori.create',
             'kategori.update',
-            'kategori.delete',
 
             'users.view',
             'users.create',
             'users.update',
-            'users.delete',
 
             'roles.view',
             'roles.create',
             'roles.update',
-            'roles.delete',
 
             'permissions.view',
             'permissions.create',
             'permissions.update',
-            'permissions.delete',
 
             'settings.view',
             'settings.update',
