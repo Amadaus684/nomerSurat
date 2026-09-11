@@ -37,8 +37,10 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->defaultThemeMode(ThemeMode::Dark)
             ->font('Sansation')
+            ->brandLogo(asset('logo.svg'))
+            ->brandLogoHeight('2rem')
             ->brandName('Noura')
-            ->favicon(asset('images/favicon.png'))
+            ->favicon(asset('favicon.ico'))
             ->colors([
                 // 'primary' => Color::Indigo,
                 'primary' => '#2ef905',
