@@ -24,7 +24,8 @@ class SuratsTable
                     ->copyMessage('Nomor surat berhasil disalin')
                     ->copyMessageDuration(1500)
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->color('info'),
                 TextColumn::make('tanggal_surat')
                     ->label('Tanggal Surat')
                     ->date(
@@ -34,14 +35,17 @@ class SuratsTable
                     ->sortable(),
                 TextColumn::make('jenisSurat.name')
                     ->label('Jenis Surat')
+                    ->color('warning')
                     ->searchable(),
                 TextColumn::make('klasifikasi.description')
                     ->label('Klasifikasi')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->badge(),
                 TextColumn::make('nama_penduduk')
                     ->label('Nama Penduduk')
-                    ->searchable(),
+                    ->searchable()
+                    ->color('danger'),
                 TextColumn::make('nik')
                     ->label('NIK')
                     ->searchable(),
@@ -55,7 +59,9 @@ class SuratsTable
                 TextColumn::make('pembuat.full_name')
                     ->label('Pembuat')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->badge()
+                    ->color('warning'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
