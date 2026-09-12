@@ -19,6 +19,7 @@ class UsersTable
                     fn ($roleQuery) => $roleQuery->where('name', 'Super Admin')
                 )
             )
+            ->recordUrl(null)
             ->columns([
                 TextColumn::make('name')
                     ->label('Name')

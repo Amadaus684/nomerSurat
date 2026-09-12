@@ -44,6 +44,7 @@ class PermissionsTable
             ->filters([
                 //
             ])
+            ->recordUrl(null)
             ->recordActions([
                 EditAction::make()
                     ->visible(fn ($record): bool =>

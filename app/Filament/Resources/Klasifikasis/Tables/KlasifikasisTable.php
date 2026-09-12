@@ -13,6 +13,7 @@ class KlasifikasisTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->recordUrl(null)
             ->columns([
                 TextColumn::make('number')
                     ->sortable()

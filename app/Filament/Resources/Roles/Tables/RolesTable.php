@@ -17,6 +17,7 @@ class RolesTable
             ->modifyQueryUsing(
                 fn ($query) => $query->where('name', '!=', 'Super Admin')
             )
+            ->recordUrl(null)
             ->columns([
                 TextColumn::make('name')
                     ->label('Role')

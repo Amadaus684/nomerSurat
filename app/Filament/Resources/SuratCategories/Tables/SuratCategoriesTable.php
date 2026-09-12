@@ -13,6 +13,7 @@ class SuratCategoriesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->recordUrl(null)
             ->columns([
                 TextColumn::make('name')
                     ->label('Kategori Surat')

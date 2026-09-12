@@ -40,6 +40,7 @@ class JenisSuratsTable
             ->filters([
                 //
             ])
+            ->recordUrl(null)
             ->defaultSort('klasifikasi.number', 'asc')
             ->recordActions([
                 EditAction::make()
