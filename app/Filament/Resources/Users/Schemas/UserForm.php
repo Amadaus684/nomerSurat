@@ -43,6 +43,7 @@ class UserForm
                     ->multiple()
                     ->options(
                         Role::query()
+                            ->where('name', '!=', 'Super Admin')
                             ->orderBy('name')
                             ->pluck('name', 'name')
                             ->toArray()

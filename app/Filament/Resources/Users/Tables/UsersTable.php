@@ -13,6 +13,12 @@ class UsersTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(
+                fn ($query) => $query->whereDoesntHave(
+                    'roles',
+                    fn ($roleQuery) => $roleQuery->where('name', 'Super Admin')
+                )
+            )
             ->columns([
                 TextColumn::make('name')
                     ->label('Name')

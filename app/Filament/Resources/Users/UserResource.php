@@ -64,11 +64,13 @@ class UserResource extends Resource
 
     public static function canEdit($record): bool
     {
-        return auth()->user()?->can('users.update') ?? false;
+        return ! $record->hasRole('Super Admin')
+        && (auth()->user()?->can('users.update') ?? false);
     }
 
     public static function canDelete($record): bool
     {
-        return auth()->user()?->can('users.delete') ?? false;
+        return ! $record->hasRole('Super Admin')
+        && (auth()->user()?->can('users.delete') ?? false);
     }
 }
