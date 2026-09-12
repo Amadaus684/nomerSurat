@@ -32,17 +32,17 @@ class Localization extends Page
 
     public ?array $data = [];
 
-    // public function mount(): void
-    // {
-    //     $settings = app(SettingService::class);
+    public function mount(): void
+    {
+        $settings = app(SettingService::class);
 
-    //     $this->form->fill([
-    //         'locale' => $settings->get('localization.locale', 'id'),
-    //         'timezone' => $settings->get('localization.timezone', 'Asia/Jakarta'),
-    //         'date_format' => $settings->get('localization.date_format', 'd/m/Y'),
-    //         'time_format' => $settings->get('localization.time_format', 'H:i'),
-    //     ]);
-    // }
+        $this->form->fill([
+            'locale' => $settings->get('localization.locale', ''),
+            'timezone' => $settings->get('localization.timezone', ''),
+            'date_format' => $settings->get('localization.date_format', ''),
+            'time_format' => $settings->get('localization.time_format', ''),
+        ]);
+    }
 
     public function form(Schema $schema): Schema
     {

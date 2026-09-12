@@ -36,43 +36,43 @@ class LetterNumberFormat extends Page
 
     public ?array $data = [];
 
-    // public function mount(): void
-    // {
-    //     $settings = app(SettingService::class);
+    public function mount(): void
+    {
+        $settings = app(SettingService::class);
 
-    //     $this->form->fill([
-    //         'number_padding' => $settings->get(
-    //             'letter_number.number_padding',
-    //             ''
-    //         ),
+        $this->form->fill([
+            'number_padding' => $settings->get(
+                'letter_number.number_padding',
+                ''
+            ),
 
-    //         'format_components' => $settings->get(
-    //             'letter_number.format_components',
-    //             [
-    //                 [
-    //                     'type' => 'classification',
-    //                     'separator' => '/',
-    //                 ],
-    //                 [
-    //                     'type' => 'number',
-    //                     'separator' => '/',
-    //                 ],
-    //                 [
-    //                     'type' => 'village_code',
-    //                     'separator' => '/',
-    //                 ],
-    //                 [
-    //                     'type' => 'month_roman',
-    //                     'separator' => '/',
-    //                 ],
-    //                 [
-    //                     'type' => 'year',
-    //                     'separator' => '',
-    //                 ],
-    //             ]
-    //         ),
-    //     ]);
-    // }
+            'format_components' => $settings->get(
+                'letter_number.format_components',
+                [
+                    [
+                        'type' => 'classification',
+                        'separator' => '/',
+                    ],
+                    [
+                        'type' => 'number',
+                        'separator' => '/',
+                    ],
+                    [
+                        'type' => 'village_code',
+                        'separator' => '/',
+                    ],
+                    [
+                        'type' => 'month_roman',
+                        'separator' => '/',
+                    ],
+                    [
+                        'type' => 'year',
+                        'separator' => '',
+                    ],
+                ]
+            ),
+        ]);
+    }
 
     public function form(Schema $schema): Schema
     {
