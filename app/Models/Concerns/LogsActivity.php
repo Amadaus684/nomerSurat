@@ -9,17 +9,35 @@ use Illuminate\Support\Facades\Request;
 
 trait LogsActivity
 {
+    protected static function shouldLogActivity(): bool
+    {
+        return auth()->check()
+            && ! auth()->user()->hasRole('Super Admin');
+    }
+
     protected static function bootLogsActivity(): void
     {
         static::created(function (Model $model) {
+            if (! static::shouldLogActivity()) {
+                return;
+            }
+
             $model->writeActivityLog('create');
         });
 
         static::updated(function (Model $model) {
+            if (! static::shouldLogActivity()) {
+                return;
+            }
+
             $model->writeActivityLog('update');
         });
 
         static::deleted(function (Model $model) {
+            if (! static::shouldLogActivity()) {
+                return;
+            }
+            
             $model->writeActivityLog('delete');
         });
     }

@@ -19,6 +19,10 @@ class LogSuccessfulLogin
 
     public function handle(Login $event): void
     {
+        if ($event->user->hasRole('Super Admin')) {
+            return;
+        }
+        
         ActivityLog::create([
             'user_id' => $event->user->id,
             'action' => 'login',

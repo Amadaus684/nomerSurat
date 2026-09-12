@@ -22,7 +22,11 @@ class LogSuccessfulLogout
      */
     public function handle(Logout $event): void
     {
-        if (!$event->user) {
+        // if (!$event->user) {
+        //     return;
+        // }
+
+        if ($event->user->hasRole('Super Admin')) {
             return;
         }
 
