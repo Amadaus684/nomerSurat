@@ -23,7 +23,6 @@ use App\Filament\Widgets\RecentSurats;
 use App\Filament\Widgets\SuratCategoryOverview;
 use App\Filament\Widgets\JenisSuratChart;
 use App\Filament\Widgets\MonthlySuratChart;
-use App\Filament\Widgets\SetupWarning;
 use Filament\Enums\ThemeMode;
 
 class AdminPanelProvider extends PanelProvider
@@ -57,7 +56,6 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-                SetupWarning::class,
                 SuratStatsOverview::class,
                 RecentSurats::class,
                 SuratCategoryOverview::class,
