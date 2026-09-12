@@ -55,8 +55,7 @@ class SuratResource extends Resource
 
     public static function canCreate(): bool
     {
-        return app(SettingService::class)->isConfigured()
-        && (auth()->user()?->can('surat.create') ?? false);
+        return auth()->user()?->can('surat.create') ?? false;
     }
 
     public static function canEdit($record): bool
