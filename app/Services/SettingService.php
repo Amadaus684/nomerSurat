@@ -7,6 +7,31 @@ use Illuminate\Support\Facades\Crypt;
 
 class SettingService
 {
+    public function isConfigured(): bool
+    {
+        $requiredSettings = [
+            'village.code',
+            'letter_number.number_padding',
+            'letter_number.format_components',
+            'letter_number.reset_period',
+            'letter_number.numbering_scope',
+            'localization.date_format',
+            'api.base_url',
+            'api.token',
+            'site.name',
+        ];
+
+        foreach ($requiredSettings as $key) {
+            $value = $this->get($key);
+
+            if ($value === null || $value === '' || $value === []) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public function get(string $key, mixed $default = null): mixed
     {
         $setting = Setting::where('key', $key)->first();

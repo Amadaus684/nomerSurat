@@ -49,7 +49,7 @@ class SiteDetails extends Page
         $settings = app(SettingService::class);
 
         $this->form->fill([
-            'site_name' => $settings->get('site.name', 'Aplikasi Nomer Surat Desa'),
+            'site_name' => $settings->get('site.name', ''),
             'site_description' => $settings->get('site.description', ''),
         ]);
     }

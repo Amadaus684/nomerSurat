@@ -32,22 +32,22 @@ class SequenceBehavior extends Page
 
     public ?array $data = [];
 
-    public function mount(): void
-    {
-        $settings = app(SettingService::class);
+    // public function mount(): void
+    // {
+    //     $settings = app(SettingService::class);
 
-        $this->form->fill([
-            'reset_period' => $settings->get(
-                'letter_number.reset_period',
-                'yearly'
-            ),
+    //     $this->form->fill([
+    //         'reset_period' => $settings->get(
+    //             'letter_number.reset_period',
+    //             'yearly'
+    //         ),
 
-            'numbering_scope' => $settings->get(
-                'letter_number.numbering_scope',
-                'global'
-            ),
-        ]);
-    }
+    //         'numbering_scope' => $settings->get(
+    //             'letter_number.numbering_scope',
+    //             'global'
+    //         ),
+    //     ]);
+    // }
 
     public function form(Schema $schema): Schema
     {

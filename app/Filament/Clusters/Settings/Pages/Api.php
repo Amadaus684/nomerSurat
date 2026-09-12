@@ -35,7 +35,7 @@ class Api extends Page
             'enabled' => $settings->get('api.enabled', true),
             'base_url' => $settings->get('api.base_url', ''),
             'token' => '',
-            'timeout' => $settings->get('api.timeout', 30),
+            'timeout' => $settings->get('api.timeout', ''),
         ]);
     }
 
@@ -64,6 +64,7 @@ class Api extends Page
 
                         TextInput::make('timeout')
                             ->label('Timeout')
+                            ->placeholder(30)
                             ->numeric()
                             ->minValue(1)
                             ->maxValue(300)
