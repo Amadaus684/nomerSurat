@@ -15,7 +15,7 @@ class ListRoles extends ListRecords
         return [
             CreateAction::make()
                 ->visible(fn (): bool =>
-                    auth()->user()?->can('role.create') ?? false
+                    auth()->user()?->can('roles.create') ?? false
                 ),
         ];
     }

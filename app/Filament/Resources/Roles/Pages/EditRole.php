@@ -44,7 +44,7 @@ class EditRole extends EditRecord
         return [
             DeleteAction::make()
                 ->visible(fn (): bool =>
-                    auth()->user()?->can('role.delete') ?? false
+                    auth()->user()?->can('roles.delete') ?? false
                 ),
         ];
     }
