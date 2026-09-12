@@ -1,26 +1,35 @@
-@if (! app(\App\Services\SettingService::class)->isConfigured())
-    <div class="mb-6 rounded-xl border border-warning-300 bg-warning-50 px-4 py-3 dark:border-warning-700 dark:bg-warning-950">
-        <div class="flex items-center gap-3">
-            <x-heroicon-o-exclamation-triangle
-                class="h-5 w-5 shrink-0 text-warning-600 dark:text-warning-400"
-            />
+@if (
+    ! request()->is('admin/settings/*')
+    && ! app(\App\Services\SettingService::class)->isConfigured()
+)
+    <div class="mb-6 flex items-center gap-3 rounded-lg border border-danger-500/30 bg-danger-500/10 px-4 py-3">
 
-            <div class="flex-1">
-                <p class="text-sm font-semibold text-warning-800 dark:text-warning-200">
-                    Konfigurasi aplikasi belum lengkap
-                </p>
+        <x-filament::icon
+            icon="heroicon-o-exclamation-triangle"
+            class="size-5 shrink-0"
+            style="color: #ef4444;"
+        />
 
-                <p class="text-sm text-warning-700 dark:text-warning-300">
-                    Lengkapi Settings sebelum mulai membuat surat.
-                </p>
-            </div>
-
-            <a
-                href="{{ \App\Filament\Clusters\Settings\SettingsCluster::getUrl() }}"
-                class="shrink-0 text-sm font-medium text-warning-700 hover:underline dark:text-warning-300"
+        <div class="flex-1">
+            <span
+                class="text-sm font-medium"
+                style="color: #ef4444;"
             >
-                Buka Settings
-            </a>
+                Konfigurasi aplikasi belum lengkap.
+            </span>
+
+            <span class="ml-1 text-sm text-gray-600 dark:text-gray-400">
+                Lengkapi Settings sebelum membuat surat.
+            </span>
         </div>
+
+        <a
+            href="{{ \App\Filament\Clusters\Settings\SettingsCluster::getUrl() }}"
+            class="shrink-0 text-sm font-medium hover:underline"
+            style="color: #ef4444;"
+        >
+            Buka Settings
+        </a>
+
     </div>
 @endif
