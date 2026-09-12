@@ -54,7 +54,7 @@ class EditUser extends EditRecord
         return [
             DeleteAction::make()
                 ->visible(fn (): bool =>
-                    auth()->user()?->can('user.delete') ?? false
+                    auth()->user()?->can('users.delete') ?? false
                 ),
         ];
     }

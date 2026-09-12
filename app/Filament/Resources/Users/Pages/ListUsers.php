@@ -15,7 +15,7 @@ class ListUsers extends ListRecords
         return [
             CreateAction::make()
                 ->visible(fn (): bool =>
-                    auth()->user()?->can('user.create') ?? false
+                    auth()->user()?->can('users.create') ?? false
                 ),
         ];
     }
