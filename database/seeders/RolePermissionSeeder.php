@@ -101,9 +101,6 @@ class RolePermissionSeeder extends Seeder
         // Admin permissions
         $admin->syncPermissions([
             'surat.view',
-            'surat.create',
-            'surat.update',
-            'surat.delete',
 
             'jenis_surat.view',
             'jenis_surat.create',
@@ -120,14 +117,6 @@ class RolePermissionSeeder extends Seeder
             'users.view',
             'users.create',
             'users.update',
-
-            'roles.view',
-            'roles.create',
-            'roles.update',
-
-            'permissions.view',
-            'permissions.create',
-            'permissions.update',
 
             'settings.view',
             'settings.update',
