@@ -15,7 +15,7 @@ class ListPermissions extends ListRecords
         return [
             CreateAction::make()
                 ->visible(fn (): bool =>
-                    auth()->user()?->can('permission.create') ?? false
+                    auth()->user()?->can('permissions.create') ?? false
                 ),
         ];
     }

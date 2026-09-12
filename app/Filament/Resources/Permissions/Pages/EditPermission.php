@@ -15,7 +15,7 @@ class EditPermission extends EditRecord
         return [
             DeleteAction::make()
                 ->visible(fn (): bool =>
-                    auth()->user()?->can('permission.delete') ?? false
+                    auth()->user()?->can('permissions.delete') ?? false
                 ),
         ];
     }
