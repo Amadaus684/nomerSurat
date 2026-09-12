@@ -14,6 +14,9 @@ class RolesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(
+                fn ($query) => $query->where('name', '!=', 'Super Admin')
+            )
             ->columns([
                 TextColumn::make('name')
                     ->label('Role')

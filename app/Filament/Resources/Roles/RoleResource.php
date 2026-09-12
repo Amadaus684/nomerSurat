@@ -64,11 +64,13 @@ class RoleResource extends Resource
 
     public static function canEdit($record): bool
     {
-        return auth()->user()?->can('roles.update') ?? false;
+        return $record->name !== 'Super Admin'
+        && (auth()->user()?->can('roles.update') ?? false);
     }
 
     public static function canDelete($record): bool
     {
-        return auth()->user()?->can('roles.delete') ?? false;
+        return $record->name !== 'Super Admin'
+        && (auth()->user()?->can('roles.delete') ?? false);
     }
 }
