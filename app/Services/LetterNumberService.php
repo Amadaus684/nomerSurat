@@ -75,8 +75,7 @@ class LetterNumberService
             'global'
         );
 
-        $query = Surat::query()
-            ->whereDate('tanggal_surat', '<=', $date);
+        $query = Surat::query();
 
         if ($resetPeriod === 'yearly') {
             $query->whereYear('tanggal_surat', $date->year);
@@ -97,11 +96,11 @@ class LetterNumberService
 
         $lastSequence = $query
             ->get()
-            ->map(function (Surat $surat) use ($date, $klasifikasiId) {
+            ->map(function (Surat $surat) {
                 return $this->extractSequence(
                     $surat->nomor_surat,
-                    $date,
-                    $klasifikasiId,
+                    $surat->tanggal_surat,
+                    $surat->klasifikasi_id,
                 );
             })
             ->max() ?? 0;
