@@ -15,7 +15,7 @@ class KategoriSuratSeeder extends Seeder
     {
         $data = [
             [
-                'name' => 'Surat Masuk',
+                'name' => 'Surat Keterangan',
             ],
             [
                 'name' => 'Surat Keluar',
