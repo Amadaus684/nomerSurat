@@ -32,6 +32,8 @@ return new class extends Migration
 
             $table->date('tanggal_kirim')->nullable();
             $table->string('tujuan')->nullable();
+            $table->string('keterangan')->nullable();
+
 
             $table->foreignId('created_by')
                 ->constrained('users')
