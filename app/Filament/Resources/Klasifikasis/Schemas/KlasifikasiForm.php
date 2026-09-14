@@ -13,7 +13,7 @@ class KlasifikasiForm
             ->components([
                 TextInput::make('number')
                     ->unique()
-                    ->maxLength(5)
+                    ->maxLength(20)
                     ->unique(ignoreRecord: true)
                     ->placeholder('900')
                     ->required(),

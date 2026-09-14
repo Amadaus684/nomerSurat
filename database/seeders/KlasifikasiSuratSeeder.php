@@ -770,7 +770,7 @@ class KlasifikasiSuratSeeder extends Seeder
 
             [
                 'number' => '300.3.2',
-                'description' => 'Penanggulangan Kebakaran',
+                'description' => 'Penanggulangan Kebgitakaran',
             ],
 
             [
