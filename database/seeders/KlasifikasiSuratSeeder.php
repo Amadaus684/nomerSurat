@@ -704,7 +704,7 @@ class KlasifikasiSuratSeeder extends Seeder
                 'description' => 'Rekapitulasi Daftar Pemilih Tetap (DPT)',
             ],
 
-            // 300.2 Kamanan, Kehilangan, Penanggulangan Bencana, Pencarian, dan Pertolongan
+            // 300 Kamanan, Kehilangan, Penanggulangan Bencana, Pencarian, dan Pertolongan
 
             [
                 'number' => '300',
@@ -713,24 +713,39 @@ class KlasifikasiSuratSeeder extends Seeder
 
             [
                 'number' => '300.1',
-                'description' => 'Ketertiban Masyarakat',
+                'description' => 'Satuan Polisi Pamong Praja',
             ],
 
             [
                 'number' => '300.1.1',
-                'description' => 'Siskamling',
+                'description' => 'Kebijakan di bidang Polisi Pamong Praja yang dilakukan di Pemerintah Daerah',
             ],
 
             [
                 'number' => '300.1.2',
-                'description' => 'Linmas',
+                'description' => 'Tata Operasional dan Prasarana Sarana Polisi Pamong Praja',
             ],
 
             [
                 'number' => '300.1.3',
-                'description' => 'Penanganan Gangguan Ketertiban',
+                'description' => 'Peningkatan Kapasitas SDM Polisi Pamong Praja',
             ],
-            
+
+            [
+                'number' => '300.1.4',
+                'description' => 'Perlindungan Masyarakat',
+            ],
+
+            [
+                'number' => '300.1.5',
+                'description' => 'Penyidik Pegawai Negeri Sipil',
+            ],
+
+            [
+                'number' => '300.1.6',
+                'description' => 'Perlindungan Hak-Hak Sipil dan Hak Asasi Manusia',
+            ],
+
             [
                 'number' => '300.2',
                 'description' => 'Penanggulangan Bencana, Pencarian, dan Pertolongan',
@@ -738,7 +753,7 @@ class KlasifikasiSuratSeeder extends Seeder
 
             [
                 'number' => '300.2.1',
-                'description' => 'Kebijakan di bidang Penanggulangan Bencana yang dilakukan oleh Pemerintah Daerah',
+                'description' => 'Kebijakan di Bidang Penanggulangan Bencana yang dilakukan oleh Pemerintah Daerah',
             ],
 
             [
@@ -748,44 +763,52 @@ class KlasifikasiSuratSeeder extends Seeder
 
             [
                 'number' => '300.2.3',
-                'description' => 'Tanggap Darurat',
+                'description' => 'Pencegahan dan Kesiapsiagaan',
             ],
 
             [
                 'number' => '300.2.4',
-                'description' => 'Rehabilitasi dan Rekonstruksi',
+                'description' => 'Potensi Pencarian dan Pertolongan',
             ],
 
             [
-                'number' => '300.3',
-                'description' => 'Kebakaran',
-            ],
-
-
-            [
-                'number' => '300.3.1',
-                'description' => 'Pencegahan Kebakaran',
-            ],
-
-
-            [
-                'number' => '300.3.2',
-                'description' => 'Penanggulangan Kebgitakaran',
+                'number' => '300.2.5',
+                'description' => 'Bina Ketenagaan dan Pemasyarakatan',
             ],
 
             [
-                'number' => '300.4',
-                'description' => 'Perlindungan Masyarakat',
+                'number' => '300.2.6',
+                'description' => 'Operasi Pencarian dan Pertolongan',
             ],
 
             [
-                'number' => '300.4.1',
-                'description' => 'Pembinaan Linmas',
+                'number' => '300.2.7',
+                'description' => 'Rencana Pengembangan dan Standardisasi Komunikasi',
             ],
 
             [
-                'number' => '300.4.2',
-                'description' => 'Kesiapsiagaan Masyarakat',
+                'number' => '300.2.8',
+                'description' => 'Operasi Komunikasi',
+            ],
+
+            [
+                'number' => '300.2.9',
+                'description' => 'Inventarisasi dan Pemeliharaan',
+            ],
+
+            [
+                'number' => '300.2.10',
+                'description' => 'Pengembangan Sistem Informasi',
+            ],
+
+            [
+                'number' => '300.2.11',
+                'description' => 'Penyajian dan Layanan Informasi',
+            ],
+
+            [
+                'number' => '300.2.12',
+                'description' => 'Pelaporan dan Evaluasi',
             ],
 
 
@@ -1170,37 +1193,62 @@ class KlasifikasiSuratSeeder extends Seeder
 
             [
                 'number' => '500.1',
-                'description' => 'Pertanian dan Pangan',
+                'description' => 'Ketahanan Pangan',
             ],
 
             [
                 'number' => '500.1.1',
-                'description' => 'Penyiapan Perumusan Kebijakan',
+                'description' => 'Kebijakan di bidang Ketahanan Pangan yang dilakukan Pemerintah Daerah',
             ],
 
             [
                 'number' => '500.1.2',
-                'description' => 'Pelaksanaan Kebijakan, Pelaksanaan Pembinaan Umum',
+                'description' => 'Ketersediaan dan Kerawanan Pangan',
+            ],
+
+            [
+                'number' => '500.1.3',
+                'description' => 'Distribusi dan cadangan pangan',
+            ],
+
+            [
+                'number' => '500.1.4',
+                'description' => 'Penganekaragaman konsumsi dan ketahanan pangan',
             ],
 
             [
                 'number' => '500.1.5',
-                'description' => 'Pelaksanaan Pemantauan, Evaluasi dan Pelaporan',
+                'description' => 'Penguatan kelembagaan ketahanan pangan',
             ],
 
             [
                 'number' => '500.1.6',
-                'description' => 'Pemberian Bimbingan Teknis dan Supervisi Sinkronisasi',
+                'description' => 'Swasembada Pangan (Kearifan Lokal)',
+            ],
+
+            [
+                'number' => '500.1.7',
+                'description' => 'Bimbingan Teknis',
+            ],
+
+            [
+                'number' => '500.1.8',
+                'description' => 'Evaluasi',
             ],
 
             [
                 'number' => '500.2',
-                'description' => 'Perindustrian dan Perdagangan',
+                'description' => 'Perdagangan',
+            ],
+
+            [
+                'number' => '500.2.1',
+                'description' => 'Kebijakan di bidang Perdagangan yang dilakukan oleh Pemerintah Daerah',
             ],
 
             [
                 'number' => '500.2.2',
-                'description' => 'Pelaksanaan Kebijakan, Pelaksanaan Pembinaan Umum',
+                'description' => 'Perdagangan dalam negeri',
             ],
 
             [
@@ -1210,27 +1258,57 @@ class KlasifikasiSuratSeeder extends Seeder
 
             [
                 'number' => '500.3',
-                'description' => 'Koperasi, Usaha Kecil dan Menengah dan Penanaman Modal',
+                'description' => 'KOPERASI DAN USAHA KECIL MENENGAH',
             ],
 
             [
                 'number' => '500.3.2',
-                'description' => 'Pelaksanaan Kebijakan, Pelaksanaan Pembinaan Umum',
+                'description' => 'Kelembagaan Koperasi dan UKM',
             ],
 
             [
                 'number' => '500.3.3',
-                'description' => 'Pelaksanaan Koordinasi dan Fasilitasi Sinkronisasi serta Harmonisasi Pembangunan Daerah di Bidang Koperasi, Usaha Kecil dan Menengah, dan Penanaman Modal',
+                'description' => 'Produksi',
+            ],
+
+            [
+                'number' => '500.3.4',
+                'description' => 'Pembiayaan',
+            ],
+
+            [
+                'number' => '500.3.5',
+                'description' => 'Pemasaran dan Jaringan Usaha',
             ],
 
             [
                 'number' => '500.3.6',
-                'description' => 'Pelaksanaan Pemantauan, Evaluasi dan Pelaporan',
+                'description' => 'Pengembangan Sumber Daya Manusia',
             ],
 
             [
                 'number' => '500.3.7',
-                'description' => 'Pemberian Bimbingan Teknis dan Supervisi Sinkronisasi',
+                'description' => 'Pengembangan dan Restrukturisasi Usaha',
+            ],
+
+            [
+                'number' => '500.3.8',
+                'description' => 'Pengkajian Sumber Daya UKMK',
+            ],
+
+            [
+                'number' => '500.3.9',
+                'description' => 'Kerja sama hubungan antar lembaga',
+            ],
+
+            [
+                'number' => '500.3.10',
+                'description' => 'Pedagang Kaki Lima (PKL)',
+            ],
+
+            [
+                'number' => '500.3.11',
+                'description' => 'Monitoring dan Evaluasi',
             ],
 
             [
@@ -1251,36 +1329,6 @@ class KlasifikasiSuratSeeder extends Seeder
             [
                 'number' => '500.5.4',
                 'description' => 'Penguatan Daya Saing Produk Kelautan dan Perikanan',
-            ],
-
-            [
-                'number' => '500.9',
-                'description' => 'Pariwisata',
-            ],
-
-            [
-                'number' => '500.9.2',
-                'description' => 'Pelaksanaan Kebijakan dan Pembinaan Umum',
-            ],
-
-            [
-                'number' => '500.9.5',
-                'description' => 'Pelaksanaan Pemantauan, Evaluasi dan Pelaporan',
-            ],
-
-            [
-                'number' => '500.11',
-                'description' => 'Ketenagakerjaan dan Transmigrasi',
-            ],
-
-            [
-                'number' => '500.11.2',
-                'description' => 'Pelaksanaan Kebijakan, Pelaksanaan Pembinaan Umum',
-            ],
-
-            [
-                'number' => '500.11.5',
-                'description' => 'Pelaksanaan Pemantauan, Evaluasi dan Pelaporan',
             ],
 
             // 600 – Pekerjaan Umum dan Ketenagaan.
@@ -1382,7 +1430,7 @@ class KlasifikasiSuratSeeder extends Seeder
 
             [
                 'number' => '600.2',
-                'description' => 'Perumahan Rakyat dan Kawasan Pemukiman',
+                'description' => 'Perumahan Rakyat dan Kawasan Permukiman',
             ],
 
             [
@@ -1724,7 +1772,7 @@ class KlasifikasiSuratSeeder extends Seeder
                 'description' => 'Pegawai Pemerintah dengan Perjanjian Kerja (PPPK)',
             ],
 
-            // 900 – Keuangan
+           // 900 – Keuangan
 
             [
                 'number' => '900',
@@ -1733,67 +1781,57 @@ class KlasifikasiSuratSeeder extends Seeder
 
             [
                 'number' => '900.1',
-                'description' => 'Anggaran Pendapatan dan Belanja Daerah (APBD)',
+                'description' => 'Keuangan Daerah',
             ],
 
             [
                 'number' => '900.1.1',
-                'description' => 'Penyusunan Anggaran',
+                'description' => 'Rencana Anggaran Pendapatan dan Belanja Daerah (RAPBD) dan Anggaran Pendapatan dan Belanja Daerah Perubahan (APBD-P)',
             ],
 
             [
                 'number' => '900.1.2',
-                'description' => 'Pelaksanaan Anggaran',
+                'description' => 'Penyusunan Anggaran',
             ],
 
             [
                 'number' => '900.1.3',
-                'description' => 'Perubahan Anggaran',
+                'description' => 'Pelaksanaan Anggaran',
             ],
 
             [
-                'number' => '900.1.4',
-                'description' => 'Pertanggungjawaban Pelaksanaan Anggaran',
+                'number' => '900.1.5',
+                'description' => 'Pengelolaan APBD/Dana Pinjaman/Hibah Luar Negeri (PHLN)',
             ],
 
             [
-                'number' => '900.2',
-                'description' => 'Akuntansi dan Pelaporan Keuangan',
+                'number' => '900.1.6',
+                'description' => 'Sistem Akuntasi Keuangan Daerah (SAKD)',
             ],
 
             [
-                'number' => '900.2.2',
-                'description' => 'Laporan Keuangan',
+                'number' => '900.1.11',
+                'description' => 'Pemeriksaan/Pengawasan Keuangan Daerah',
             ],
 
             [
-                'number' => '900.2.3',
-                'description' => 'Pertanggungjawaban Keuangan',
+                'number' => '900.1.12',
+                'description' => 'Anggaran Daerah',
             ],
 
             [
-                'number' => '900.7',
-                'description' => 'Perbendaharaan',
+                'number' => '900.1.13',
+                'description' => 'Pendapatan dan Investasi Daerah',
             ],
 
             [
-                'number' => '900.7.3',
-                'description' => 'Pertanggungjawaban Bendahara',
+                'number' => '900.1.14',
+                'description' => 'Fasilitasi Dana Perimbangan khusus dan dana transfer lainnya',
             ],
 
             [
-                'number' => '900.9',
-                'description' => 'Dana Transfer dan Bantuan Keuangan',
-            ],
-
-            [
-                'number' => '900.9.1',
-                'description' => 'Dana Transfer',
-            ],
-
-            [
-                'number' => '900.9.2',
-                'description' => 'Bantuan Keuangan',
+                'number' => '900.1.15',
+                'description' => 'Pelaksanaan dan Pertanggungjawaban Keuangan Daerah',
             ],
            
         ];
