@@ -25,7 +25,6 @@ return new class extends Migration
                 ->restrictOnDelete();
 
             $table->string('nama_penduduk')->nullable();
-            $table->string('nik', 16)->nullable();
             $table->text('alamat')->nullable();
 
             $table->text('keperluan');
