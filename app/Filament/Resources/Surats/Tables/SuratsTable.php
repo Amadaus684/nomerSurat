@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use App\Services\SettingService;
+use Filament\Actions\ViewAction;
 
 class SuratsTable
 {
@@ -44,17 +45,6 @@ class SuratsTable
                     ->badge(),
                 TextColumn::make('nama_penduduk')
                     ->label('Nama Penduduk')
-                    ->searchable()
-                    ->color('danger'),
-                TextColumn::make('nik')
-                    ->label('NIK')
-                    ->searchable(),
-                TextColumn::make('tanggal_kirim')
-                    ->label('Tanggal Kirim')
-                    ->date()
-                    ->sortable(),
-                TextColumn::make('tujuan')
-                    ->label('Tujuan')
                     ->searchable(),
                 TextColumn::make('pembuat.full_name')
                     ->label('Pembuat')
@@ -76,6 +66,8 @@ class SuratsTable
             ])
             ->recordUrl(null)
             ->recordActions([
+                ViewAction::make()
+                    ->label('Detail'),
                 EditAction::make()
                     ->visible(fn ($record): bool =>
                         auth()->user()?->can('surat.update') ?? false

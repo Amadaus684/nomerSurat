@@ -25,11 +25,12 @@ return new class extends Migration
                 ->restrictOnDelete();
 
             $table->string('nama_penduduk')->nullable();
-            $table->text('alamat')->nullable();
+            $table->string('alamat')->nullable();
 
-            $table->text('keperluan');
+            $table->string('keperluan');
 
             $table->date('tanggal_kirim')->nullable();
+            $table->date('tanggal_peristiwa')->nullable();
             $table->string('tujuan')->nullable();
             $table->string('keterangan')->nullable();
 

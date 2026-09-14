@@ -55,6 +55,7 @@ class SuratForm
                         DatePicker::make('tanggal_surat')
                             ->label('Tanggal Surat')
                             ->live()
+                            ->default(today())
                             ->afterStateUpdated(function ($state, callable $get, callable $set) {
                                 self::updateNumberPreview($get, $set);
                             })
@@ -103,22 +104,66 @@ class SuratForm
                     ])
                     ->columns(2),
 
-                Section::make('Data Penduduk')
+                Section::make('Data Lanjutan')
                     ->schema([
                         TextInput::make('nama_penduduk')
                             ->label('Nama Penduduk')
+                            ->columnSpanFull()
                             ->required(),
 
-                        TextInput::make('nik')
-                            ->label('NIK')
-                            ->required()
-                            ->maxLength(16),
-
-                        Textarea::make('alamat')
+                        TextInput::make('alamat')
                             ->label('Alamat')
+                            ->placeholder('rt 003 / rw 004')
+                            ->helperText('rt rw')
                             ->required()
-                            ->rows(3)
                             ->columnSpanFull(),
+
+                        TextInput::make('keterangan')
+                            ->label('Keterangan Surat')
+                            ->helperText('atau jenis usaha')
+                            ->columnSpanFull()
+                            ->required()
+                            ->visible(function ($get): bool {
+                                $jenisSuratId = $get('jenis_surat_id');
+
+                                if (!$jenisSuratId) {
+                                    return false;
+                                }
+
+                                return JenisSurat::with('category')
+                                    ->find($jenisSuratId)
+                                    ?->category?->name !== 'Surat Kelahiran / Kematian';
+                            }),
+
+                        DatePicker::make('tanggal_peristiwa')
+                            ->label('Tanggal Peristiwa')
+                            ->default(today())
+                            ->required()
+                            ->label(function ($get) {
+                                $jenisSuratId = $get('jenis_surat_id');
+
+                                if (!$jenisSuratId) {
+                                    return 'Tanggal Peristiwa';
+                                }
+
+                                $jenisSurat = JenisSurat::find($jenisSuratId);
+
+                                return $jenisSurat?->name === 'Surat Kematian'
+                                    ? 'Tanggal Kematian'
+                                    : 'Tanggal Kelahiran';
+                            })
+                            ->visible(function ($get): bool {
+                                $jenisSuratId = $get('jenis_surat_id');
+
+                                if (!$jenisSuratId) {
+                                    return false;
+                                }
+
+                                return JenisSurat::with('category')
+                                    ->find($jenisSuratId)
+                                    ?->category?->name === 'Surat Kelahiran / Kematian';
+                            }),
+
                     ])
                     ->columns(2)
                     ->visible(function ($get): bool {
@@ -130,22 +175,34 @@ class SuratForm
 
                         return JenisSurat::with('category')
                             ->find($jenisSuratId)
-                            ?->category?->name === 'Surat Keterangan';
+                            ?->category?->name !== 'Surat Keluar';
                     }),
 
                 Section::make('Detail Surat')
                     ->schema([
-                        Textarea::make('keperluan')
+                        TextInput::make('keperluan')
                             ->label('Keperluan')
+                            ->helperText('atau isi surat')
                             ->required()
-                            ->rows(3)
                             ->columnSpanFull(),
-                    ]),
+                    ])
+                    ->visible(function ($get): bool {
+                        $jenisSuratId = $get('jenis_surat_id');
+
+                        if (!$jenisSuratId) {
+                            return false;
+                        }
+
+                        return JenisSurat::with('category')
+                            ->find($jenisSuratId)
+                            ?->category?->name !== 'Surat Kelahiran / Kematian';
+                    }),
 
                 Section::make('Pengiriman Surat')
                     ->schema([
                         DatePicker::make('tanggal_kirim')
                             ->label('Tanggal Kirim')
+                            ->default(today())
                             ->required(),
 
                         TextInput::make('tujuan')
