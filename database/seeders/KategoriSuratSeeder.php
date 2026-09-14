@@ -15,11 +15,17 @@ class KategoriSuratSeeder extends Seeder
     {
         $data = [
             [
-                'name' => 'Surat Keterangan',
+                'name' => 'Surat Kelahiran / Kematian',
             ],
+
             [
                 'name' => 'Surat Keluar',
             ],
+
+            [
+                'name' => 'Surat Keterangan',
+            ],            
+            
         ];
 
         foreach ($data as $dataInserted) {
