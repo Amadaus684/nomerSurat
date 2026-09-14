@@ -704,8 +704,33 @@ class KlasifikasiSuratSeeder extends Seeder
                 'description' => 'Rekapitulasi Daftar Pemilih Tetap (DPT)',
             ],
 
-            // 300.2 Penanggulangan Bencana, Pencarian, dan Pertolongan
+            // 300.2 Kamanan, Kehilangan, Penanggulangan Bencana, Pencarian, dan Pertolongan
 
+            [
+                'number' => '300',
+                'description' => 'Keamanan dan Ketertiban',
+            ],
+
+            [
+                'number' => '300.1',
+                'description' => 'Ketertiban Masyarakat',
+            ],
+
+            [
+                'number' => '300.1.1',
+                'description' => 'Siskamling',
+            ],
+
+            [
+                'number' => '300.1.2',
+                'description' => 'Linmas',
+            ],
+
+            [
+                'number' => '300.1.3',
+                'description' => 'Penanganan Gangguan Ketertiban',
+            ],
+            
             [
                 'number' => '300.2',
                 'description' => 'Penanggulangan Bencana, Pencarian, dan Pertolongan',
@@ -720,6 +745,49 @@ class KlasifikasiSuratSeeder extends Seeder
                 'number' => '300.2.2',
                 'description' => 'Perencanaan Penanggulangan Bencana, Pencarian, dan Pertolongan',
             ],
+
+            [
+                'number' => '300.2.3',
+                'description' => 'Tanggap Darurat',
+            ],
+
+            [
+                'number' => '300.2.4',
+                'description' => 'Rehabilitasi dan Rekonstruksi',
+            ],
+
+            [
+                'number' => '300.3',
+                'description' => 'Kebakaran',
+            ],
+
+
+            [
+                'number' => '300.3.1',
+                'description' => 'Pencegahan Kebakaran',
+            ],
+
+
+            [
+                'number' => '300.3.2',
+                'description' => 'Penanggulangan Kebakaran',
+            ],
+
+            [
+                'number' => '300.4',
+                'description' => 'Perlindungan Masyarakat',
+            ],
+
+            [
+                'number' => '300.4.1',
+                'description' => 'Pembinaan Linmas',
+            ],
+
+            [
+                'number' => '300.4.2',
+                'description' => 'Kesiapsiagaan Masyarakat',
+            ],
+
 
             // 400 – Kesejahteraan Rakyat
 
