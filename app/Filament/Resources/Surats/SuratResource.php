@@ -22,6 +22,12 @@ class SuratResource extends Resource
 
     protected static ?int $navigationSort = 10;
 
+    protected static ?string $navigationLabel = 'Surat';
+
+    protected static ?string $modelLabel = 'Surat';
+
+    protected static ?string $pluralModelLabel = 'Surat';
+
     public static function form(Schema $schema): Schema
     {
         return SuratForm::configure($schema);
