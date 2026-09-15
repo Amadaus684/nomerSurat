@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Klasifikasis\Tables;
 
 use Filament\Actions\BulkActionGroup;
-// use Filament\Actions\DeleteBulkAction;
+use Illuminate\Support\HtmlString;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -14,6 +14,17 @@ class KlasifikasisTable
     {
         return $table
             ->recordUrl(null)
+            ->description(new HtmlString('
+                Referensi:
+                <a
+                    href="https://jdih.jombangkab.go.id/dokumen/detail/peraturan-bupati-jombang-nomor-19-tahun-2024-tentang-kode-klasifikasi-arsip-472"
+                    target="_blank"
+                    class="text-primary-600 hover:underline"
+                >
+                    Peraturan Bupati Jombang Nomor 19 Tahun 2024
+                </a>
+                Tentang Kode Klasifikasi Arsip
+            '))
             ->columns([
                 TextColumn::make('number')
                     ->sortable()
