@@ -15,10 +15,11 @@ use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
 use Spatie\Permission\Traits\HasRoles;
 use App\Models\Concerns\LogsActivity;
+use Filament\Panel;
 
 #[Fillable(['name', 'email', 'password', 'full_name'])]
 #[Hidden(['password', 'remember_token'])]
-class User extends Authenticatable implements HasAvatar
+class User extends Authenticatable implements HasAvatar, FilamentUser
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, HasRoles, LogsActivity;
