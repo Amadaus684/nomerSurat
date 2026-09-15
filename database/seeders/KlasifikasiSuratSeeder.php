@@ -1169,9 +1169,166 @@ class KlasifikasiSuratSeeder extends Seeder
                 'description' => 'Pelayanan Pemakaman',
             ],
 
+            // 400.12 – Kependudukan dan Catatan Sipil
+
             [
                 'number' => '400.12',
                 'description' => 'Kependudukan dan Catatan Sipil',
+            ],
+
+            [
+                'number' => '400.12.1',
+                'description' => 'Kebijakan di bidang Kependudukan dan Catatan Sipil yang dilakukan oleh Pemerintah Daerah',
+            ],
+
+            [
+                'number' => '400.12.2',
+                'description' => 'Pendaftaran Penduduk',
+            ],
+
+            [
+                'number' => '400.12.2.1',
+                'description' => 'Identitas Penduduk',
+            ],
+
+            [
+                'number' => '400.12.2.2',
+                'description' => 'Pindah Datang Penduduk Dalam Wilayah NKRI',
+            ],
+
+            [
+                'number' => '400.12.2.3',
+                'description' => 'Pindah Datang Penduduk Antar Negara',
+            ],
+
+            [
+                'number' => '400.12.2.4',
+                'description' => 'Pendataan Penduduk Rentan',
+            ],
+
+            [
+                'number' => '400.12.2.5',
+                'description' => 'Monitoring, Evaluasi dan Dokumentasi',
+            ],
+
+            [
+                'number' => '400.12.3',
+                'description' => 'Pencatatan Sipil',
+            ],
+
+            [
+                'number' => '400.12.3.1',
+                'description' => 'Kelahiran dan Kematian',
+            ],
+
+            [
+                'number' => '400.12.3.2',
+                'description' => 'Perkawinan dan Perceraian',
+            ],
+
+            [
+                'number' => '400.12.3.3',
+                'description' => 'Pengangkatan, Pengakuan dan Pengesahan Anak serta Perubahan',
+            ],
+
+            [
+                'number' => '400.12.3.4',
+                'description' => 'Pencatatan Kewarganegaraan',
+            ],
+
+            [
+                'number' => '400.12.3.5',
+                'description' => 'Monitoring, Evaluasi dan Dokumentasi',
+            ],
+
+            [
+                'number' => '400.12.4',
+                'description' => 'Pengelolaan Informasi Administrasi Kependudukan',
+            ],
+
+            [
+                'number' => '400.12.4.1',
+                'description' => 'Sistem Informasi Administrasi Kependudukan',
+            ],
+
+            [
+                'number' => '400.12.4.2',
+                'description' => 'Kelembagaan Informasi Administrasi Kependudukan',
+            ],
+
+            [
+                'number' => '400.12.4.3',
+                'description' => 'Pengelolaan Data Administrasi Kependudukan',
+            ],
+
+            [
+                'number' => '400.12.4.4',
+                'description' => 'Penyajian dan Layanan Informasi Administrasi Kependudukan',
+            ],
+
+            [
+                'number' => '400.12.4.5',
+                'description' => 'Monitoring, Evaluasi dan Dokumentasi',
+            ],
+
+            [
+                'number' => '400.12.5',
+                'description' => 'Pengembangan Kebijakan Kependudukan',
+            ],
+
+            [
+                'number' => '400.12.5.1',
+                'description' => 'Kuantitas Penduduk',
+            ],
+
+            [
+                'number' => '400.12.5.2',
+                'description' => 'Kualitas Penduduk',
+            ],
+
+            [
+                'number' => '400.12.5.3',
+                'description' => 'Mobilitas Penduduk',
+            ],
+
+            [
+                'number' => '400.12.5.4',
+                'description' => 'Perlindungan dan Pemberdayaan Penduduk',
+            ],
+
+            [
+                'number' => '400.12.5.5',
+                'description' => 'Pengembangan Wawasan Kependudukan, Monitoring dan Evaluasi',
+            ],
+
+            [
+                'number' => '400.12.6',
+                'description' => 'Penyerasian Kependudukan',
+            ],
+
+            [
+                'number' => '400.12.6.1',
+                'description' => 'Indikator Kependudukan',
+            ],
+
+            [
+                'number' => '400.12.6.2',
+                'description' => 'Proyeksi Penduduk',
+            ],
+
+            [
+                'number' => '400.12.6.3',
+                'description' => 'Perencanaan Kependudukan',
+            ],
+
+            [
+                'number' => '400.12.6.4',
+                'description' => 'Penyerasian Kebijakan Kependudukan dengan Lembaga Non Pemerintah',
+            ],
+
+            [
+                'number' => '400.12.6.5',
+                'description' => 'Pelaksanaan Penyerasian Kebijakan Kependudukan dengan Lembaga Pemerintah',
             ],
 
             [
